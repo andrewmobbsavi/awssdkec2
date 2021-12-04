@@ -1,0 +1,13 @@
+version: '3'
+services:
+  awscdk:
+    env_file:
+    - aws.env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: node:14.18.2-buster-slim
+    container_name: awscdk
+    volumes:
+      - ./data/:/root/data
+    network_mode: bridge
