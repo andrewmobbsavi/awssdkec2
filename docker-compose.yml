@@ -10,4 +10,5 @@ services:
     container_name: awscdk
     volumes:
       - ./data/:/root/data
+      - /root/data/hello-cdks/node_modules
     network_mode: bridge
