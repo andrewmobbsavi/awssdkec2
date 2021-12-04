@@ -37,7 +37,6 @@ Fix:
 const cdk = require('@aws-cdk/core');
 const s3 = require('@aws-cdk/aws-s3');
 const S3Deployment = require('@aws-cdk/aws-s3-deployment');
-// const sqs = require('@aws-cdk/aws-sqs');
 
 const path = "/root/data/files";
 
@@ -52,12 +51,6 @@ class HelloCdksStack extends cdk.Stack {
     super(scope, id, props);
 
     // The code that defines your stack goes here
-
-    // new s3.Bucket(this, 'MyFirstBucket', {
-    //   versioned: true,
-    //   removalPolicy: cdk.RemovalPolicy.DESTROY,
-    //   autoDeleteObjects: true
-    // });
 
     const bucket = new s3.Bucket(this, "Files", {
       websiteIndexDocument: "index.html",
