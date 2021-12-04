@@ -39,7 +39,7 @@ const s3 = require('@aws-cdk/aws-s3');
 const S3Deployment = require('@aws-cdk/aws-s3-deployment');
 // const sqs = require('@aws-cdk/aws-sqs');
 
-const path = "/root/data/files";
+const path = "/home/ubuntu/awssdkintro/data/files";
 
 class HelloCdksStack extends cdk.Stack {
   /**
