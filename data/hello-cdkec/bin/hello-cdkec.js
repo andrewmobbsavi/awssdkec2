@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const cdk = require('@aws-cdk/core');
-const { HelloCdksStack } = require('../lib/hello-cdks-stack');
+const { HelloCdkecStack } = require('../lib/hello-cdkec-stack');
 
 const app = new cdk.App();
-new HelloCdksStack(app, 'HelloCdksStack', {
+new HelloCdkecStack(app, 'HelloCdkecStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -18,4 +18,9 @@ new HelloCdksStack(app, 'HelloCdksStack', {
   // env: { account: '123456789012', region: 'us-east-1' },
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
+  description: 'Testing the EC2 deployment stack...',
+  env: {
+    region: process.env.AWS_DEFAULT_REGION,
+    account: process.env.AWS_ACCOUNT_NUMBER,
+  }
 });

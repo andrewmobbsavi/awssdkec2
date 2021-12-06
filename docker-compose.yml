@@ -1,14 +1,14 @@
 version: '3'
 services:
-  awscdk:
+  awscdkec:
     env_file:
     - aws.env
     build:
       context: .
       dockerfile: Dockerfile
     image: node:14.18.2-buster-slim
-    container_name: awscdk
+    container_name: awscdkec
     volumes:
       - ./data/:/root/data
-      - /root/data/hello-cdks/node_modules
+      - /root/data/hello-cdkec/node_modules
     network_mode: bridge

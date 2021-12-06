@@ -1,5 +1,5 @@
 {
-  "app": "node bin/hello-cdks.js",
+  "app": "node bin/hello-cdkec.js",
   "watch": {
     "include": [
       "**"
