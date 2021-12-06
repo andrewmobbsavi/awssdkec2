@@ -3,7 +3,7 @@
 ## Basic setup
 * Clone the repo:
 
-    `git clone git@github.com:andrewmobbsavi/awscdkdocker.git`
+* `git clone git@github.com:andrewmobbsavi/awssdkec2.git`
 * `docker-compose up -d --build`
-* `docker exec -it awscdk bash`
+* `docker exec -it awscdkec bash`
 * `cdk --version`
