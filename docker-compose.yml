@@ -11,4 +11,6 @@ services:
     volumes:
       - ./data/:/root/data
       - /root/data/hello-cdkec/node_modules
+      - ./pems/:/root/.aws/pems
+      - ./aws/:/root/.aws
     network_mode: bridge

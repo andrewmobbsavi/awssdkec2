@@ -19,7 +19,7 @@ const path = "/root/data/files";
 
 require('dotenv').config()
 
-
+//https://dev.to/emmanuelnk/part-3-simple-ec2-instance-awesome-aws-cdk-37ia#introduction
 
 class HelloCdkecStack extends cdk.Stack {
   /**
@@ -30,7 +30,7 @@ class HelloCdkecStack extends cdk.Stack {
    */
   constructor(scope, id, props) {
     super(scope, id, props)
-    
+
     // The code that defines your stack goes here
     // Get the default VPC. This is the network where your instance will be provisioned
     // All activated regions in AWS have a default vpc.
@@ -87,12 +87,12 @@ class HelloCdkecStack extends cdk.Stack {
         ec2.InstanceClass.T2,
         ec2.InstanceSize.MICRO
       ),
-      machineImage: ec2.MachineImage.fromSSMParameter(
+      machineImage: ec2.MachineImage.fromSsmParameter(
         '/aws/service/canonical/ubuntu/server/focal/stable/current/amd64/hvm/ebs-gp2/ami-id',
         ec2.OperatingSystemType.LINUX
       ), //https://loige.co/provision-ubuntu-ec2-with-cdk/   use ssm to get ubuntu image
 
-      keyName: 'simple-instance-1-key', // we will create this in the console before we deploy
+      keyName: 'awstesting', // we will create this in the console before we deploy
     })
 
     // cdk lets us output prperties of the resources we create after they are created
